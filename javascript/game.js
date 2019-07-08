@@ -1,3 +1,34 @@
+// Initial Variables Set
+var guessed = [];
+var wins = document.getElementById("wins");
+var losses = document.getElementById("losses");
+var guessesLeft = document.getElementById("gueesesLeft");
+
+// Random number function
+// X is range
+function randomNum(x){
+    var num = Math.floor((Math.random() * (x)) + 1);
+    return num;
+}
+
+// Initial Answer Set
+var random = (randomNum(10) - 1);
+console.log("Answer is: " + random);
+
+// Compare input to computer
+// X is input
+// Y is computer
+function compare(x, y){
+    if(x==y){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+// Game Logic
 // Start on Key
 document.onkeyup = function (event) {
     // Check if button is a number
@@ -13,9 +44,11 @@ document.onkeyup = function (event) {
         event.key == '9' ||
         event.key == '0'
     ) {
+        // Input Check
         console.log("Number inputted: " + event.key);
-    } 
-    else{
-        console.log("Incorrect input");
+
+    } else {
+        // Input Check
+        console.log("Incorrect input: " + event.key);
     }
 }
